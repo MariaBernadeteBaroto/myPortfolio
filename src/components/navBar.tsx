@@ -14,7 +14,7 @@ export default function Navbar({ onToggle }: { onToggle: (isOpen: boolean) => vo
 
   return (
     <nav className="w-full bg-gradient-to-tl from-black via-black to-purple-900 z-50 fixed top-0 left-0">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
         <div className="text-xl font-bold tracking-wide text-gray-300">My Portfolio</div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-white hover:text-purple-500 transition">
