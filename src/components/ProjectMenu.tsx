@@ -12,12 +12,14 @@ export default function ProjectMenu() {
       id: 'project1',
       title: 'GO MOMMY',
       summary: '"Go Mommy" is a comprehensive mobile application designed to support and guide expecting parents throughout their incredible journey of pregnancy.',
-      details: 'This app aims to be a trusted companion, offering valuable information, tools, and resources to help expectant mothers and their partners make informed decisions, stay healthy, and embrace this transformative phase their of life.\n\n Go Mommy is packed with features to help you stay informed, healthy, and connected during this special time in your life. \n\n Main Features: \n\n 1. Sign In  \n\n 2. Home (Dashboard)  \n\n 3. Calendar (Pregnancy Tracker)  \n\n 4. Maps (Hospital Near Me)  \n\n 5. Tips and Advice  .'
+      details: 'This app aims to be a trusted companion, offering valuable information, tools, and resources to help expectant mothers and their partners make informed decisions, stay healthy, and embrace this transformative phase their of life.\n\n Go Mommy is packed with features to help you stay informed, healthy, and connected during this special time in your life. \n\n Main Features: \n\n 1. Sign In  \n\n 2. Home (Dashboard)  \n\n 3. Calendar (Pregnancy Tracker)  \n\n 4. Maps (Hospital Near Me)  \n\n 5. Tips and Advice  .',
+      manualUrl: '/manuals/GoMommy.pdf'
     },{
       id: 'project2',
       title: 'PUP AddER',
       summary: 'PUP AddER (Polytechnic University of the Philippines AddER), an event registration system designed to streamline the process of organizing and registering for university events.',
-      details: 'PUP AddER is a dynamic and user-friendly event registration system tailored for thePolytechnic University of the Philippines. The system name reflects its core functionality: making event registration quick and effortless for users. Despite challenges related to time and manpower, the development team successfully built a robust platform that enhances event organization and participation within the university. \n\n Key Features: \n\n 1.  User Authentication: Secure login and registration using Firebase Authentication.\n\n 2. Event Creation & Management: Allow organizers to create, edit, and manage events.\n\n 3. Event Discovery Page:  A visually appealing section where users can browse upcoming events, inspired by the PUP website and LUMA. \n\n 4. Registration System: Users can easily register for events with a single click.\n\n 5. Dashboard Page:  Displays key statistics such as the total number of events, registered users, and logged-in users.\n\n It also provides a downloadable report feature for easy record-keeping and data analysis'
+      details: 'PUP AddER is a dynamic and user-friendly event registration system tailored for thePolytechnic University of the Philippines. The system name reflects its core functionality: making event registration quick and effortless for users. Despite challenges related to time and manpower, the development team successfully built a robust platform that enhances event organization and participation within the university. \n\n Key Features: \n\n 1.  User Authentication: Secure login and registration using Firebase Authentication.\n\n 2. Event Creation & Management: Allow organizers to create, edit, and manage events.\n\n 3. Event Discovery Page:  A visually appealing section where users can browse upcoming events, inspired by the PUP website and LUMA. \n\n 4. Registration System: Users can easily register for events with a single click.\n\n 5. Dashboard Page:  Displays key statistics such as the total number of events, registered users, and logged-in users.\n\n It also provides a downloadable report feature for easy record-keeping and data analysis',
+      manualUrl: '/manuals/PUPAddER.pdf'
     }
   ]
 
@@ -47,10 +49,21 @@ export default function ProjectMenu() {
                 <DialogTitle>{project.title}</DialogTitle>
               </DialogHeader>
               <div className="mt-4 space-y-4 text-sm">
-                  {project.details.split("\n\n").map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                    ))}
+                {project.details.split("\n\n").map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
               </div>
+              {project.manualUrl && (
+                <div className="mt-6">
+                  <a
+                    href={project.manualUrl}
+                    download
+                    className="inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded transition"
+                  >
+                    📄 Download Manual
+                  </a>
+                </div>
+              )}
             </DialogContent>
           </Dialog>
         ))}
