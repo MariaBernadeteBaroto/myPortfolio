@@ -5,7 +5,7 @@ import Image from "next/image";
 import Navbar from "@/components/navBar";
 import HomePage from "@/components/homePage";
 import ProjectMenu from "@/components/ProjectMenu";
-import { Instagram, Github, Linkedin } from 'lucide-react'
+import {Github, Linkedin } from 'lucide-react'
 
 
 export default function Home() {
