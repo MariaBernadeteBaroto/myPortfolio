@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function ProjectMenu() {
   const [selectedProject, setSelectedProject] = useState<'project1' | 'project2' | null>(null)
+  const [showNotice, setShowNotice] = useState(true)
 
   const projects = [
     {
@@ -26,6 +27,16 @@ export default function ProjectMenu() {
   return (
   <div className="min-h-screen w-full bg-gradient-to-br from-purple-900 via-black to-black text-white flex items-center justify-center px-4 sm:px-6 py-12">
     <div className="text-center">
+      {showNotice && (
+        <div className="mb-6 bg-yellow-200 text-black text-sm px-4 py-3 rounded shadow-md flex justify-between items-center max-w-4xl mx-auto">
+          <p>
+            ⚠️ Disclaimer: The projects presented here are university projects. I do not take full credit for them.
+          </p>
+          <button onClick={() => setShowNotice(false)} className="ml-4 text-black hover:text-red-600 font-bold">
+            ✕
+          </button>
+        </div>
+      )}
       <h1 className="text-3xl md:text-5xl font-bold mb-12 font-serif">My Projects</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
