@@ -11,7 +11,7 @@ import { Instagram, Github, Linkedin } from 'lucide-react'
 export default function Home() {
    const [menuOpen, setMenuOpen] = useState(false)
   return (
-    <div  className="font-sans grid grid-rows-[auto_1fr_auto] min-h-screen gap-8 px-8 pb-20 sm:px-20">
+    <div  className="w-full bg-black font-sans grid grid-rows-[auto_1fr_auto] min-h-screen gap-8 pb-20  overflow-x-hidden">
       <Navbar onToggle={setMenuOpen} />
       
       <main  className={`row-start-1 transition-all duration-300 ease-in-out pt-16 w-full ${
@@ -32,16 +32,8 @@ export default function Home() {
         
 
       
-      
-      
-      {/* Footer */}
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://www.instagram.com/bernapooh/"
-          target="_blank" rel="noopener noreferrer">
-          <Instagram size={16} />
-          Instagram
-        </a>
+      <div className="bg-black text-white py-8 border-t border-gray-700 -mt-10 -mb-20 ">
+      <footer id="accounts" className="row-start-3 flex flex-wrap gap-6 items-center justify-center">
         <a className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://github.com/MariaBernadeteBaroto"
           target="_blank" rel="noopener noreferrer">
@@ -55,6 +47,7 @@ export default function Home() {
           LinkedIn
         </a>
       </footer>
+    </div>
 
     </div>
   );

@@ -24,7 +24,7 @@ export default function ProjectMenu() {
   ]
 
   return (
-  <div className="min-h-screen w-screen bg-gradient-to-br from-purple-900 via-black to-black text-white px-6 py-12 flex items-center justify-center">
+  <div className="min-h-screen w-full bg-gradient-to-br from-purple-900 via-black to-black text-white flex items-center justify-center px-4 sm:px-6 py-12">
     <div className="text-center">
       <h1 className="text-3xl md:text-5xl font-bold mb-12 font-serif">My Projects</h1>
 
@@ -44,7 +44,7 @@ export default function ProjectMenu() {
                 </CardContent>
               </Card>
             </DialogTrigger>
-            <DialogContent className="bg-black border-purple-500 text-white">
+            <DialogContent className="bg-black border-purple-500 text-white max-h-[90vh] overflow-y-auto">
               <DialogHeader>
                 <DialogTitle>{project.title}</DialogTitle>
               </DialogHeader>
@@ -65,6 +65,7 @@ export default function ProjectMenu() {
                 </div>
               )}
             </DialogContent>
+
           </Dialog>
         ))}
       </div>
